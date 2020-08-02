@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LeSonDuko</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Voici mes créations faites a la palette avec gimp, paint.net, inkscape, photoshop CS8, blender et le logiciel bamboo , bon visionnage !!">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="show.js"></script>
+</head>
+<body>
+
+
+  <div id="galerie">
+    <ul id="galerie_mini">
+      <li>
+        <a href="images/photo1.png" title="Titre de la photo 1"><img src="images/minis/m_photo1.png" alt="Le titre de la photo 1" /></a>    </li>
+      <li>
+        <a href="images/photo2.png" title="Titre de la photo 2"><img src="images/minis/m_photo2.png" alt="Le titre de la photo 2" /></a>    </li>
+      <li>
+        <a href="images/photo3.png" title="Titre de la photo 3"><img src="images/minis/m_photo3.png" alt="Le titre de la photo 3" /></a>    </li>
+      <li>
+        <a href="images/photo4.png" title="Titre de la photo 4"><img src="images/minis/m_photo4.png" alt="Le titre de la photo 4" /></a>    </li>
+      <li>
+        <a href="images/photo5.png" title="Titre de la photo 5"><img src="images/minis/m_photo5.png" alt="Le titre de la photo 5" /></a>    </li>
+      <li>
+        <a href="images/photo6.png" title="Titre de la photo 6"><img src="images/minis/m_photo6.png" alt="Le titre de la photo 6" /></a>    </li>
+      <li>
+        <a href="images/photo7.png" title="Titre de la photo 7"><img src="images/minis/m_photo7.png" alt="Le titre de la photo 7" /></a>    </li>
+      <li>
+        <a href="images/photo8.png" title="Titre de la photo 8"><img src="images/minis/m_photo8.png" alt="Le titre de la photo 8" /></a>    </li>
+      <li>
+        <a href="images/photo9.png" title="Titre de la photo 9"><img src="images/minis/m_photo9.png" alt="Le titre de la photo 9" /></a>  </li>
+  </ul>
+
+    <dl id="photo">
+      <dt>Titre de la photo 1</dt>
+      <dd><img id="big_pict" src="images/photo1.png" alt="Photo 1 en taille normale" /></dd>
+    </dl>
+  </div>
+<script>
+
+var fso=new ActiveXObject("Scripting.FileSystemObject");
+
+function Aller(repertoire)  //گگ début d'un répertoire گگ
+                            //گگگگگگگگگگگگگگگگگگگگگگگگگگگ
+{
+ f = fso.GetFolder(repertoire);
+                                        //گگگگگگگگگگگگگگگگگگ
+ var f1 = new Enumerator(f.files);      //گگ les fichiers گگ
+                                        //گگگگگگگگگگگگگگگگگگ
+ for (; !f1.atEnd(); f1.moveNext())
+ {
+	alert(f1.item());
+ }
+                                       //گگگگگگگگگگگگگگگگگگگگگگگگگگ
+ var f2=new Enumerator(f.subfolders);  //گگ les sous/répertoires گگ
+                                       //گگگگگگگگگگگگگگگگگگگگگگگگگگ
+ for (; !f2.atEnd(); f2.moveNext())
+ {
+	Aller(f2.item());
+ }
+}
+
+var lsdko = "lsdko";
+Aller(lsdko);
+
+</script>
+
+</body>
+</html>
